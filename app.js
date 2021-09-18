@@ -23,7 +23,7 @@ MongoClient.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (e
             throw error;
         }
         db = client.db(database_name).collection(collection_name);
-        console.log('Conectado à base de dados ` ' + database_name + ' `!');
+        console.log('Conectado à base de dados ' + database_name + '!');
     });
 
 app.use(bodyParser.json());
