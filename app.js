@@ -1,7 +1,10 @@
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const app = express();
+const app = express()
+
+app.use(cors())
 
 let porta = 8080;
 app.listen(porta, () => {
