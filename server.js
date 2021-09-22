@@ -3,9 +3,9 @@ require('dotenv/config');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { connection } = require('mongoose');
 const listaUsuarios = require('./routes/listaUsuarios');
 const cadastro = require('./routes/cadastro');
+const pesquisaVacina = require('./routes/pesquisaVacina');
 
 const port = process.env.PORT || 4000;
 
@@ -13,7 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
+app.listen(port, () => { console.log(`Servidor rodando!\nPorta: ${port}`) });
+
 app.use(listaUsuarios);
 app.use(cadastro);
-
-app.listen(port, () => { console.log(`Servidor rodando!\nPorta: ${port}`) });
+app.use(pesquisaVacina);
