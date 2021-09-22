@@ -15,6 +15,10 @@ app.use(express.urlencoded({ extended: true}));
 
 app.listen(port, () => { console.log(`Servidor rodando!\nPorta: ${port}`) });
 
+// ESLint
+// index.html nas rotas
+// Verificar como instanciar a conexão
+
 app.use(listaUsuarios);
 app.use(cadastro);
 app.use(pesquisaVacina);
