@@ -1,7 +1,8 @@
 const MongoHelper = require('../helpers/mongo-helper');
+const validaToken = require('../middlewares/validador-token');
 
 const get = async function(req, res) {
-    const vacina = await MongoHelper.getCollection('Vacina');
+    const vacina = await MongoHelper.getCollection('Vacinas');
     const termoBusca = req.params.termoBusca;
     let where = {};
 
@@ -30,6 +31,6 @@ const get = async function(req, res) {
 };
 
 module.exports = (router) => {
-    router.get('/PesquisaVacinas/:termoBusca', get);
-    router.get('/PesquisaVacinas/', get);
+    router.get('/pesquisa-vacina/:termoBusca', validaToken, get);
+    router.get('/pesquisa-vacina/', validaToken, get);
 };

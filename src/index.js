@@ -1,9 +1,11 @@
+const env = require('./configs/env');
 const MongoHelper = require('./helpers/mongo-helper');
-const env = require('./config/env');
 
 MongoHelper.connect(env.mongoUrl)
     .then(() => {
-        const app = require('./config/app');
-        app.listen(env.port, () => console.log(`Server running at http://localhost:${env.port}`));
-    })
-    .catch(console.error);
+        const app = require('./configs/app');
+
+        app.listen(env.port, () => {
+            console.log('Servidor em execução na porta: ' + env.port);
+        });
+    });

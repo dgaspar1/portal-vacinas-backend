@@ -1,4 +1,4 @@
-const {MongoClient} = require('mongodb');
+const { MongoClient } = require('mongodb');
 
 module.exports = {
     async connect(uri) {
@@ -11,7 +11,7 @@ module.exports = {
                 throw error;
             }
             this.client = client;
-            this.db = client.db('Portal-Vacinas');
+            this.db = client.db('portal-vacinas');
         });
     },
 
