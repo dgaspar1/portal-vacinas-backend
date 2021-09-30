@@ -4,7 +4,8 @@ const MongoHelper = require('../helpers/mongo-helper');
 const post = async (req, res) => {
     const { error } = validador(req.body);
 
-    if (error) {
+    if (error) 
+    {
         return res.status(400).json({ error: error.details[0].message });
     }
 
