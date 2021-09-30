@@ -2,9 +2,11 @@ const env = require('../configs/env');
 const MongoHelper = require('../helpers/mongo-helper');
 
 const post = async (req, res) => {
-    const { error } = validador(req.body);
+    const { error 
+    } = validador(req.body);
 
     if (error) 
+
     {
         return res.status(400).json({ error: error.details[0].message });
     }
