@@ -1,13 +1,15 @@
 {
-    "name": "mongoose-atlas",
+    "name": "portal-vacinas-backend",
     "version": "1.0.0",
-    "description": "Hello world project",
+    "description": "Projeto utilizado na UFSC durante o segundo semestre letivo de 2021 referente ao semestre 2021.1.",
     "private": true,
-    "main": "app.js",
-    "scripts": {
-        "dev": "nodemon src/index.js"
-    },
     "author": "Denys Gaspar",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon src/index.js",
+        "linter": "npx eslint --fix .",
+        "test": "jest"
+    },
     "dependencies": {
         "@hapi/joi": "^17.1.1",
         "bcryptjs": "^2.4.3",
@@ -15,7 +17,6 @@
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
         "fast-glob": "^3.2.7",
-        "jest": "^27.2.4",
         "jsonwebtoken": "^8.5.1",
         "mongodb": "^4.1.2",
         "mongoose": "^6.0.6"
@@ -25,7 +26,9 @@
         "eslint-config-google": "^0.14.0",
         "git-commit-msg-linter": "^3.2.8",
         "husky": "^7.0.2",
+        "jest": "^27.2.4",
         "lint-staged": "^11.1.2",
-        "nodemon": "^2.0.12"
+        "nodemon": "^2.0.12",
+        "supertest": "^6.1.6"
     }
 }
